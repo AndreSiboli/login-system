@@ -1,4 +1,5 @@
 import axios, { AxiosError } from "axios";
+import { Router } from "next/router";
 
 interface UserDataType {
   email: string;
@@ -30,11 +31,7 @@ export async function requestSignUp({ email, password }: UserDataType) {
 }
 
 export async function logoutSession() {
-  try {
-    await axios.post(`${baseURL}/logout`);
+  axios.post(`${baseURL}/logout`, {}, { withCredentials: true }).finally(() => {
     window.location.assign("/sign-in");
-  } catch (err) {
-    const error = err as AxiosError;
-    return { message: "An error has ocurred.", status: error?.status || 500 };
-  }
+  });
 }
