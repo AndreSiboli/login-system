@@ -1,0 +1,52 @@
+.user {
+  position: relative;
+
+  &_button {
+    font-size: 1.5rem;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &_drop {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 105%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px #0003;
+    background: #fff;
+    padding: 1em;
+    z-index: 3;
+    min-width: 200px;
+
+    &.appear {
+      display: block;
+    }
+
+    .username{
+        text-align: center;
+    }
+  }
+
+  .break {
+    width: 100%;
+    margin: 1em 0;
+    background: #555;
+    height: 1px;
+  }
+
+  &_logout {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1rem;
+
+    svg {
+      font-size: 1.25rem;
+    }
+  }
+}

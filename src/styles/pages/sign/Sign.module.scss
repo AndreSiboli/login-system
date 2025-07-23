@@ -1,0 +1,30 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.sign {
+  display: flex;
+  justify-content: space-between;
+
+  &_container,
+  &_image {
+    flex: 0 0 50%;
+  }
+
+  &_container {
+    padding: 7em 1em;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+  }
+
+  &_image {
+    position: relative;
+    background: var.$brand_color_200;
+    width: 100%;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+}

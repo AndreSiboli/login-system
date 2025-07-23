@@ -1,0 +1,10 @@
+@use "@/styles/_dirs/variables" as var;
+
+.logo {
+  h1 {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2em;
+    font-weight: normal;
+  }
+}

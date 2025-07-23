@@ -1,0 +1,79 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.menu {
+  visibility: hidden;
+  position: fixed;
+  inset: 0;
+  min-height: 100dvh;
+  background: #0005;
+  z-index: 99;
+  transition: visibility 0.15s ease-in-out;
+
+  &.opened {
+    visibility: visible;
+
+    .menu_container {
+      width: 500px;
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    right: 0;
+    top: 0;
+
+    padding: 1em;
+    background: var.$neutral_color_100;
+    transition: width 0.15s ease-in-out;
+  }
+
+  &_header {
+    width: fit-content;
+  }
+
+  &_overflow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    height: 100%;
+    padding-top: 0;
+    margin-top: 1.5em;
+  }
+
+  &_navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    @include mix.Scroll;
+
+    a {
+      text-transform: uppercase;
+      font-size: 1.25em;
+      width: fit-content;
+    }
+  }
+
+  &_footer {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
+
+    a {
+      font-size: 1.25em;
+    }
+  }
+
+ 
+}

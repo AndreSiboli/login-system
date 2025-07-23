@@ -1,0 +1,56 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.form {
+  max-width: 400px;
+  width: 100%;
+
+  legend {
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  &_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    width: 100%;
+    margin-top: 2.5em;
+
+    .input_container {
+      &.split {
+        display: flex;
+        gap: 1em;
+      }
+    }
+  }
+
+  &_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+
+    button {
+      color: var.$clr-light-hard;
+      background: clr-dark-normal;
+    }
+  }
+
+  &_error {
+    font-size: 0.9em;
+    color: var.$support_color_err;
+    margin-top: 1em;
+  }
+
+  &_create {
+    margin-top: 2em;
+
+    p {
+      text-align: center;
+
+      a {
+        color: var.$brand_color_500;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.dashboard {
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    padding: 7em 1em;
+
+    h1{
+        text-align: center;
+    }
+  }
+  
+}

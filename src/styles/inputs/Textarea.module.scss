@@ -1,0 +1,49 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.textarea {
+  position: relative;
+  border-bottom: 1px solid var.$neutral_color_900;
+  width: 100%;
+
+  textarea {
+    border: none;
+    padding: 0.25em 0;
+    outline: none;
+    width: 100%;
+    font-size: 1em;
+    font-family: var(--font-raleway);
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+
+    &:-webkit-autofill {
+      -webkit-background-clip: text;
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      top: -16px;
+      transform: translate(0);
+      font-size: 0.8em;
+    }
+  }
+
+  label {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    color: var.$neutral_color_700;
+    transition: top 0.15s ease-in-out, transform 0.15s ease-in-out,
+      font-size 0.15s ease-in-out;
+  }
+
+  &.error {
+    border-bottom-color: var.$support_color_err;
+
+    label {
+      color: var.$support_color_err;
+    }
+  }
+}

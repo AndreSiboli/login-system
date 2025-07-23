@@ -1,0 +1,30 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.button {
+  border: none;
+  background: var.$neutral_color_100;
+  font-weight: bold;
+  width: 100%;
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
+
+  &.v1 {
+    background: var.$neutral_color_100;
+    color: var.$clr-dark-normal;
+  }
+
+  &.v2 {
+    background: var.$neutral_color_900;
+    color: var.$clr-light-hard;
+  }
+
+  @include mix.OnlyPc {
+    &:hover {
+      background: var.$brand_color_200;
+      color: var.$clr-dark-normal;
+    }
+  }
+}
