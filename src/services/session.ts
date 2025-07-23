@@ -31,9 +31,8 @@ export async function requestSignUp({ email, password }: UserDataType) {
 
 export async function logoutSession() {
   try {
-    const res = await axios.post(`${baseURL}/logout`);
-    window.location.href = "/sign-in";
-    return res;
+    await axios.post(`${baseURL}/logout`);
+    window.location.assign("/sign-in");
   } catch (err) {
     const error = err as AxiosError;
     return { message: "An error has ocurred.", status: error?.status || 500 };
